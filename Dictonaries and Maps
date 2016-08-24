@@ -1,0 +1,34 @@
+<?php
+$_fp = fopen("php://stdin", "r");
+/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+fscanf($_fp,"%d", $n);
+
+$store = array();
+$check = array();
+$may = array();
+$a = stream_get_contents($_fp);  
+$arr = explode("\n",$a);    
+for($i = 0; $i < $n; $i++){
+    $may[$i] = explode(" ", $arr[$i]);
+    $store[$may[$i][0]] = $may[$i][1];
+}
+$l =  count($arr);
+for($i = $n; $i < $l; $i++){
+    $check[] = $arr[$i];   // containing the checking values
+}
+
+//echo count($check);
+
+foreach($check as $c_key => $c_val){   
+    $flag = 0;
+ // foreach($store as $key => $value){
+      
+      if( array_key_exists($c_val, $store)){               // $c_val == $key
+          printf("%s=%d\n", $c_val, $store[$c_val]);
+          $flag = 1;
+      }
+  //}
+    if($flag == 0) printf("Not found\n");
+}
+
+?>
