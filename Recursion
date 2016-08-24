@@ -1,0 +1,13 @@
+<?php
+$_fp = fopen("php://stdin", "r");
+/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+fscanf($_fp,"%d", $n);
+function factorial($p){
+    if($p <= 1) return 1;
+    else 
+        return($p * factorial($p - 1));
+}
+
+printf("%d\n", factorial($n));
+
+?>
