@@ -1,0 +1,7 @@
+
+$ah = stream_get_contents($handle);
+
+sscanf($ah,"%d %f %[^\n]s", $in, $dou, $str);
+printf("%d\n%.1f\n%s\n", $i+$in, $d+$dou, $s.$str);
+
+
