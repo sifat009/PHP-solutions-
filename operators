@@ -1,0 +1,12 @@
+<?php
+$_fp = fopen("php://stdin", "r");
+/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+$ans = 0;
+$str = stream_get_contents($_fp);
+$store = explode("\n", $str);
+$ans = (($store[0]*100) + ($store[0]* $store[1])+ ($store[0] * $store[2]))/100;
+$ans = round($ans);
+echo "The total meal cost is {$ans} dollars.\n";
+
+
+?>
