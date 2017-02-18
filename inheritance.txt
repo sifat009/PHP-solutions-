@@ -1,5 +1,6 @@
 
 class Student extends person {
+
     private $testScores;
         public function __construct($first_name, $last_name, $identification, $marks){
         $this->testScores = $marks;
