@@ -1,0 +1,24 @@
+<?php
+$_fp = fopen("php://stdin", "r");
+/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+
+$ar = file_get_contents("php://stdin");
+$array = explode("\n", $ar);
+
+$l = $array[0];
+//echo $l;
+for($i = 1; $i <= $l; $i++){
+    $store = $array[$i];
+    for($j = 0; $j < strlen($store); $j++){
+        if(!($j & 1)) echo "$store[$j]";
+    }
+    echo " ";
+    for($j = 0; $j < strlen($store); $j++){
+        if(($j & 1)) echo "$store[$j]";
+    }
+    $store = 0;
+    echo "\n";
+    
+}
+
+?>

@@ -1,0 +1,12 @@
+<?php
+
+$handle = fopen ("php://stdin","r");
+fscanf($handle,"%d",$N);
+if(($N & 1) || (!($N & 1) && ((6 <= $N) && ($N <= 20))) ){
+    printf("Weird\n");
+}
+if(!($N & 1) && (((2 <= $N)&&($N <= 5)) || ($N > 20))){
+    printf("Not Weird\n");
+}
+
+?>

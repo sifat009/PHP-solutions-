@@ -1,0 +1,28 @@
+
+class Student extends person {
+    private $testScores;
+        public function __construct($first_name, $last_name, $identification, $marks){
+        $this->testScores = $marks;
+        $this->firstName = $first_name;
+        $this->lastName = $last_name;
+        $this->id = $identification;
+    }
+ 
+    var $avg = 0;
+    var $sum = 0;
+ 
+ public function calculate(){
+         for($i = 0; $i < count($this->testScores); $i++){
+            $this->sum += $this->testScores[$i];
+        }
+            $this->avg = $this->sum/count($this->testScores);
+            if($this->avg < 40) return 'T';
+            else if($this->avg < 55) return 'D';
+            else if($this->avg < 70) return 'P';
+            else if($this->avg < 80) return 'A';
+            else if($this->avg < 90) return 'E';
+            else return 'O';
+        }
+ 
+ 
+}
